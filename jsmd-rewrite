@@ -1,0 +1,40 @@
+#!/usr/bin/env node
+var rewrite = require('./');
+
+function showUsage() {
+  console.log('Usage: jsmd-rewrite <path>');
+}
+
+var argi = process.argv.length;
+
+function rewriteStream(stream) {
+  var input = '';
+  stream
+    .on('data', function(data) {
+      input += data.toString();
+    })
+    .on('end', function() {
+      try {
+        console.log(rewrite(input));
+      } catch (error) {
+        process.exit(1);
+      }
+    })
+}
+
+if (argi > 3) {
+  showUsage();
+  process.exit(1);
+} else if (argi === 3) {
+  var argument = process.argv[2];
+  if (argument === '--version') {
+    console.log(require('./package.json').version);
+  } else if (argument === '--help') {
+    showUsage();
+  } else {
+    rewriteStream(require('fs').createReadStream(argument));
+  }
+} else {
+  rewriteStream(process.stdin);
+  process.stdin.resume();
+}

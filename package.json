@@ -1,0 +1,26 @@
+{
+  "name": "jsmd-rewrite",
+  "version": "0.0.0",
+  "bin": "jsmd-rewrite",
+  "description": "translate code examples in Markdown to test assertions",
+  "preferGlobal": true,
+  "license": "MIT",
+  "repository": "kemitchell/jsmd-rewrite",
+  "dependencies": {
+    "escodegen": "^1.6.1",
+    "esprima": "^2.4.1",
+    "estraverse": "^4.1.0",
+    "marked": "^0.3.3"
+  },
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "hydro": "^0.10.1",
+    "hydro-chai": "^0.3.0",
+    "hydro-dot": "^2.0.1",
+    "hydro-silent": "^1.0.1",
+    "nixt": "^0.4.1"
+  },
+  "scripts": {
+    "test": "hydro"
+  }
+}
