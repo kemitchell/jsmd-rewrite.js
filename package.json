@@ -20,7 +20,6 @@
     "tape": "^4.0.0"
   },
   "license": "MIT",
-  "preferGlobal": true,
   "repository": "kemitchell/jsmd-rewrite.js",
   "scripts": {
     "pretest": "jshint",
