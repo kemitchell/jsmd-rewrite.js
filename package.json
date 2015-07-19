@@ -1,7 +1,7 @@
 {
   "name": "jsmd-rewrite",
   "description": "rewrite code examples in Markdown code blocks as test assertions",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Veselin Todorov <hi@vesln.com>",
   "bin": "jsmd-rewrite",
   "contributors": [
