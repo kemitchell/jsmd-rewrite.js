@@ -1,11 +1,12 @@
 {
   "name": "jsmd-rewrite",
-  "version": "0.0.0",
-  "bin": "./node_modules/stdin-transform-cli/sync.js",
   "description": "rewrite code examples in Markdown code blocks as test assertions",
-  "preferGlobal": true,
-  "license": "MIT",
-  "repository": "kemitchell/jsmd-rewrite",
+  "version": "0.0.0",
+  "author": "Veselin Todorov <hi@vesln.com>",
+  "bin": "./node_modules/stdin-transform-cli/sync.js",
+  "contributors": [
+    "Kyle E. Mitchell <kyle@kemitchell.com> (https://kemitchell.com/)"
+  ],
   "dependencies": {
     "escodegen": "^1.6.1",
     "esprima": "^2.4.1",
@@ -18,6 +19,9 @@
     "jshint": "^2.8.0",
     "tape": "^4.0.0"
   },
+  "license": "MIT",
+  "preferGlobal": true,
+  "repository": "kemitchell/jsmd-rewrite",
   "scripts": {
     "pretest": "jshint .",
     "test": "tape test.js"
