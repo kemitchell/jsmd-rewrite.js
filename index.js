@@ -1,32 +1,13 @@
-/**
- * External dependencies.
- */
-
 var Lexer = require('marked').Lexer;
 var parse = require('esprima').parse;
 var replace = require('estraverse').replace;
 var generate = require('escodegen').generate;
 
-/**
- * Syntax constants.
- */
-
 var LINE_COMMENT = 'Line';
 var EXPRESSION = 'ExpressionStatement';
 
-/**
- * Lexer constants.
- */
-
 var CODE = 'code';
 var HTML = 'html';
-
-/**
- * Markdown to JavaScript rewriter.
- *
- * @param {String} input
- * @constructor
- */
 
 function Rewriter(input, name) {
   name = name ? name : '__jsmd__';
@@ -35,14 +16,7 @@ function Rewriter(input, name) {
   this.assertions = [];
 }
 
-/**
- * Extract the JavaScript code from `input`.
- *
- * @param {Function} fn
- * @api public
- */
-
-Rewriter.prototype.compile = function() {
+Rewriter.prototype.extractJavaScript = function() {
   var buff = [];
   var lexer = new Lexer();
 
@@ -57,31 +31,14 @@ Rewriter.prototype.compile = function() {
     }
   });
 
-  return this.build(buff.join('\n'));
+  return this.generateAssertions(buff.join('\n'));
 };
 
-/**
- * Build the final source file.
- *
- * @param {String} source code
- * @param {Function} fn
- * @api private
- */
-
-Rewriter.prototype.build = function(code) {
+Rewriter.prototype.generateAssertions = function(code) {
   var tree = this.parse(code);
   var ast = this.buildAst(tree, code);
   return generate(tree);
 };
-
-/**
- * Parse the given source and extract
- * all assertions.
- *
- * @param {String} source code
- * @returns {Object} ast
- * @api private
- */
 
 Rewriter.prototype.parse = function(code) {
   var tree = parse(code, { comment: true, range: true, tokens: true, loc: true });
@@ -99,15 +56,6 @@ Rewriter.prototype.parse = function(code) {
   return tree;
 };
 
-/**
- * Build the new ast.
- *
- * @param {Object} ast
- * @param {String} input
- * @returns {Object} new ast
- * @api private
- */
-
 Rewriter.prototype.buildAst = function(ast, input) {
   var assertions = this.assertions;
   var self = this;
@@ -124,16 +72,6 @@ Rewriter.prototype.buildAst = function(ast, input) {
   });
 };
 
-/**
- * Build an expression statement that will
- * contain the actual assertion.
- *
- * @param {Object} expected
- * @param {Object} actual
- * @returns {Object}
- * @api private
- */
-
 Rewriter.prototype.assertion = function(first, second) {
   return {
     type: 'ExpressionStatement',
@@ -148,10 +86,6 @@ Rewriter.prototype.assertion = function(first, second) {
   };
 };
 
-/**
- * Primary export.
- */
-
 module.exports = function(input, name) {
-  return (new Rewriter(input, name)).compile();
+  return (new Rewriter(input, name)).extractJavaScript();
 };
