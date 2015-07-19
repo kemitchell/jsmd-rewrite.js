@@ -1,6 +1,6 @@
 Rewrite code examples in Markdown code blocks as test assertions.
 
-This:
+Rewrite this:
 
     # Title of Your README.md
 
@@ -22,7 +22,7 @@ This:
 	additionmodule(2, 2); // => 4
     ```
 
-becomes:
+into this:
 
 ```javascript
 var additionModule = require('./');
