@@ -6,7 +6,7 @@ This:
 
     This is _Markdown_!
 
-	<!--js
+	<!--javascript
 	  var additionModule = require('./');
 	-->
 
@@ -17,7 +17,7 @@ This:
 	The JavaScript expressions with comments that follow will
 	be rewritten as asssertions.
     
-    ```js
+    ```javascript
 	additionmodule(1, 1); // => 2
 	additionmodule(2, 2); // => 4
     ```

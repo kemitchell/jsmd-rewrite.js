@@ -52,8 +52,8 @@ Rewriter.prototype.compile = function() {
     }
 
     if (token.type === HTML) {
-      var match = token.text.trim().match(/^<!--\s*js\s+([\S\s]*)-->$/);
-      if (match) buff.push(match[1]);
+      var match = token.text.trim().match(/^<!--\s*(js|javascript)\s+([\S\s]*)-->$/);
+      if (match) buff.push(match[2]);
     }
   });
 
