@@ -14,15 +14,12 @@
     "stdin-transform-cli": "1.x"
   },
   "devDependencies": {
-    "chai": "^1.10.0",
-    "hydro": "^0.10.1",
-    "hydro-chai": "^0.3.0",
-    "hydro-dot": "^2.0.1",
-    "hydro-silent": "^1.0.1",
-    "jshint": "^2.8.0"
+    "glob": "^5.0.14",
+    "jshint": "^2.8.0",
+    "tape": "^4.0.0"
   },
   "scripts": {
     "pretest": "jshint .",
-    "test": "hydro"
+    "test": "tape test.js"
   }
 }
