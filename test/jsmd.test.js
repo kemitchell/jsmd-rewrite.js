@@ -6,7 +6,7 @@ function run(fixtureName, callback) {
   var rewritten = rewrite(input);
   input = 'var __jsmd__ = require("assert").deepEqual;' + rewritten;
   try {
-    eval(input);
+    eval(input); // jshint ignore:line
   } catch (e) {
     callback(e);
   }

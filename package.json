@@ -18,9 +18,11 @@
     "hydro-chai": "^0.3.0",
     "hydro-dot": "^2.0.1",
     "hydro-silent": "^1.0.1",
+    "jshint": "^2.8.0",
     "nixt": "^0.4.1"
   },
   "scripts": {
+    "pretest": "jshint .",
     "test": "hydro"
   }
 }
