@@ -23,7 +23,7 @@
   "preferGlobal": true,
   "repository": "kemitchell/jsmd-rewrite.js",
   "scripts": {
-    "pretest": "jshint .",
+    "pretest": "jshint",
     "test": "tape test.js"
   }
 }
