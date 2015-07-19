@@ -9,10 +9,10 @@ var EXPRESSION = 'ExpressionStatement';
 var CODE = 'code';
 var HTML = 'html';
 
-function Rewriter(input, name) {
-  name = name ? name : '__jsmd__';
+function Rewriter(input, assertName) {
+  assertName = assertName ? assertName : '__jsmd__';
   this.input = input.replace(/\r\n|[\n\v\f\r\x85\u2028\u2029]/g, '\n');
-  this.name = name;
+  this.assertName = assertName;
   this.assertions = [];
 }
 
@@ -67,25 +67,29 @@ Rewriter.prototype.buildAst = function(ast, input) {
       var newlines = input.substring(node.range[0], node.range[1]).match(/\n(?=\s*$)/g) || [];
       line -= newlines.length;
       if (!assertions.hasOwnProperty(line)) return node;
-      return self.assertion(node.expression, assertions[line]);
+      var lineAST = {
+        type: 'Literal',
+        value: 'line ' + line
+      };
+      return self.assertionAST(node.expression, assertions[line], lineAST);
     }
   });
 };
 
-Rewriter.prototype.assertion = function(first, second) {
+Rewriter.prototype.assertionAST = function(first, second, message) {
   return {
     type: 'ExpressionStatement',
     expression: {
       type: 'CallExpression',
       callee: {
         type: 'Identifier',
-        name: this.name,
+        name: this.assertName,
       },
-      arguments: [first, second]
+      arguments: [first, second, message]
     }
   };
 };
 
-module.exports = function(input, name) {
-  return (new Rewriter(input, name)).extractJavaScript();
+module.exports = function(input, assertName) {
+  return (new Rewriter(input, assertName)).extractJavaScript();
 };
