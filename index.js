@@ -119,7 +119,7 @@ Rewriter.prototype.buildAst = function(ast, input) {
       var newlines = input.substring(node.range[0], node.range[1]).match(/\n(?=\s*$)/g) || [];
       line -= newlines.length;
       if (!assertions.hasOwnProperty(line)) return node;
-      return self.assertion(assertions[line], node.expression);
+      return self.assertion(node.expression, assertions[line]);
     }
   });
 };

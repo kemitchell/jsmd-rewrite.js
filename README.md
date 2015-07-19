@@ -26,8 +26,8 @@ becomes:
 
 ```javascript
 var additionModule = require('./');
-__jsmd__(2, additionModule(l, 1));
-__jsmd__(4, additionModule(2, 2));
+__jsmd__(additionModule(l, 1), 2);
+__jsmd__(additionModule(2, 2), 4);
 ```
 
 Commmand-Line Interface

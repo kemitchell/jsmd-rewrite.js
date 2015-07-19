@@ -1,5 +1,5 @@
-__jsmd__(1, Math.min(1, 2));
-__jsmd__(2, Math.min(2, 3));
-__jsmd__(3, Math.min(3, 4));
+__jsmd__(Math.min(1, 2), 1);
+__jsmd__(Math.min(2, 3), 2);
+__jsmd__(Math.min(3, 4), 3);
 foo();
-__jsmd__(4, bar());
+__jsmd__(bar(), 4);
