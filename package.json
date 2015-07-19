@@ -3,7 +3,7 @@
   "description": "rewrite code examples in Markdown code blocks as test assertions",
   "version": "0.1.0",
   "author": "Veselin Todorov <hi@vesln.com>",
-  "bin": "./node_modules/stdin-transform-cli/sync.js",
+  "bin": "jsmd-rewrite",
   "contributors": [
     "Kyle E. Mitchell <kyle@kemitchell.com> (https://kemitchell.com/)"
   ],
