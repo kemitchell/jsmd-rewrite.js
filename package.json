@@ -21,7 +21,7 @@
   },
   "license": "MIT",
   "preferGlobal": true,
-  "repository": "kemitchell/jsmd-rewrite",
+  "repository": "kemitchell/jsmd-rewrite.js",
   "scripts": {
     "pretest": "jshint .",
     "test": "tape test.js"
