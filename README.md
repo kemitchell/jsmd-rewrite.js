@@ -35,11 +35,8 @@ Commmand-Line Interface
 
 ```shellsesssion
 $ npm install --global jsmd-rewrite
-
 $ jsmd-rewrite --version
-
 $ jsmd-rewrite --help
-
 $ jsmd-rewrite README.md
 ```
 
