@@ -1,3 +1,7 @@
+.jshintignore
+.jshintrc
+.npmignore
+.travis.yml
 examples
 test
 test.js
