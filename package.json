@@ -3,7 +3,7 @@
   "description": "rewrite code examples in Markdown code blocks as test assertions",
   "version": "0.1.1",
   "author": "Veselin Todorov <hi@vesln.com>",
-  "bin": "jsmd-rewrite",
+  "bin": "node_modules/stdin-transform-cli/sync",
   "contributors": [
     "Kyle E. Mitchell <kyle@kemitchell.com> (https://kemitchell.com/)"
   ],
@@ -12,7 +12,7 @@
     "esprima": "^2.4.1",
     "estraverse": "^4.1.0",
     "marked": "^0.3.3",
-    "stdin-transform-cli": "1.x"
+    "stdin-transform-cli": "^1.0.4"
   },
   "devDependencies": {
     "glob": "^5.0.14",
