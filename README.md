@@ -1,6 +1,6 @@
 Rewrite code examples in Markdown code blocks as test assertions.
 
-Rewrite this:
+Turns this:
 
     # Title of Your README.md
 
@@ -30,7 +30,7 @@ __jsmd__(additionModule(l, 1), 2, 'line 1');
 __jsmd__(additionModule(2, 2), 4, 'line 2');
 ```
 
-Commmand-Line Interface
+Command-Line Interface
 =======================
 
 ```shellsesssion
