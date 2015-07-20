@@ -38,6 +38,7 @@ $ npm install --global jsmd-rewrite
 $ jsmd-rewrite --version
 $ jsmd-rewrite --help
 $ jsmd-rewrite README.md
+$ cat README.md | jsmd-rewrite
 ```
 
 Node.js
