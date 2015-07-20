@@ -59,3 +59,8 @@ rewrite(markdown, assertionFunctionName); // returns string
 ```
 
 The function name used for assertions is `"__jsmd__"` by default.
+
+License
+=======
+
+The one and only original [`jsmd`](https://npmjs.com/packages/jsmd) is copyright Veselin Todorov and maintained by Veselin Todorov and Jake Rosoman. This package incorporates `jsmd`'s rewriting logic with adaptations by Kyle Mitchell. `jsmd-rewrite`, like `jsmd`, is licensed per the terms of the MIT License.
